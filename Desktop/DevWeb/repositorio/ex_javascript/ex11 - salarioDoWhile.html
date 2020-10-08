@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Do while</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <h3>Salario - Do while</h3>
+    </body>
+    <script language="JavaScript">
+        var quantidadeHorasTrabalhadas;
+        var valorHOrasTrabalhadas;
+        var desconto;
+        var totalDescontos;
+        var salarioBruto;
+        var salarioLiquido;
+        var resposta = true;
+
+        do{
+            quantidadeHorasTrabalhadas = parseFloat(window.prompt('Informe a quantidade de horas trabalhadas/mês: (135 a 180)', 'horas'));
+            
+            valorHOrasTrabalhadas = parseFloat(window.prompt('Informe o valor da hora trabalhada: (25 a 50)', 'R$'));
+            
+            desconto = parseFloat(window.prompt('Informe o percentual de desconto: (5 a 15)', '%'));
+
+            salarioBruto = valorHOrasTrabalhadas * quantidadeHorasTrabalhadas;
+
+            totalDescontos = (desconto/100) * salarioBruto;
+
+            salarioLiquido = salarioBruto - totalDescontos;
+
+            document.write('<br>Demonstrativo para cálculo do salário líquido)');
+
+            document.write('<br>Quantidade de horas trabalhadas (135 a 180)', quantidadeHorasTrabalhadas);
+        
+            if (quantidadeHorasTrabalhadas > 180){
+                document.write('<br> valor máximo de horas excedido');
+            };
+            if (quantidadeHorasTrabalhadas < 135){
+                document.write('<br> Valor mínimo inválido');
+            };
+            document.write('<br> Valor da hora trabalhada', valorHOrasTrabalhadas);
+            if(valorHOrasTrabalhadas > 50){
+                document.write('<br> Valor máximo esxcedido');
+            };
+            if(valorHOrasTrabalhadas < 25){
+                document.write('<br>valor mínimo inválido');
+            };
+            document.write('<br> Percentual de desconto (5 a 15)', desconto);
+            if (desconto > 15){
+                document.write('<br>Valor máximo excedido');
+            };
+            if(desconto < 5){
+                document.write('<br> valor mínimo inválido');
+            };
+            document.write('<br>Salário bruto: ', salarioBruto);
+            document.write('<br>Total de desconto: ', totalDescontos);
+            document.write('<br>Salário líquido: ', salarioLiquido);
+
+            if(salarioLiquido > 10500){
+                document.write('<br> Salário elevado');
+            }
+            else{
+                if(salarioLiquido > 6000) {
+                    document.write('<br> salario satisfatório');
+                }
+                else{
+                    if (salarioLiquido > 3000){
+                        document.write('<br>Salario moderado');
+                    }
+                    else{
+                        document.write('<br>Salário insatisfatório');
+                    }
+                }
+            }
+            document.write('----------------------------------------------------------------------------');
+            resposta = window.confirm('<br>Deseja continuar?');
+            
+        }
+        while (resposta == true);
+        </script>
+</html>

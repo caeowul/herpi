@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UpperLowerCase</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <h3>exercício 13</h3>
+        <form name="formcurso" action="" method="post">
+            Digite seu Curso: <input type="text" name="f_cursodig" size="8" maxlength="4" />
+            <input type="button" name="btn_validar" value="validar" onclick="cadcurso()" />
+            <input type="reset" name="btn_cancelar" value="cancelar" /><p></p>
+            C&oacute;digo do curso: <input type="text" name="f_codcurso" size="15" maxlength="10" />
+        </form>
+        <script language="JavaScript">
+
+            var curso_dig;
+
+            function cadcurso(){
+                curso_dig = document.formcurso.f_cursodig.value;
+                if(curso_dig.toUpperCase()=='SIST') {
+                    document.formcurso.f_codcurso.value='SIST001/FB';
+                }
+                else{
+                    window.alert('curso Inv\u00E1lido!');
+                }
+            }
+
+        </script>
+    </body>
+</html>

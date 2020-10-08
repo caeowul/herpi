@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Salario</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script language="javascript">
+            var horasTrabalhadas;
+            var valorHora;
+            var percentualDesconto;
+            
+
+            horasTrabalhadas = parseInt(window.prompt("Digite a quantidade de horas trabalhadas", '00'));
+            valorHora = parseInt(window.prompt('Digite o preço das horas trabalhadas: ', 'R$'))
+            percentualDesconto = parseInt(window.prompt('Digite o percentual de desconto', '%'))
+            document.write("<br> Horas trabalhadas: ", horasTrabalhadas)
+            document.write("<br> Preço da hora: ", valorHora)
+            
+            var salario = valorHora*horasTrabalhadas
+
+            document.write("<br> salário: ", salario)
+            
+            document.write('<br> Percentual de desconto: ',percentualDesconto,' %')
+
+            var salarioComDesconto = salario - (salario*percentualDesconto/100)
+
+            document.write('<br> valor do salario final: ', salarioComDesconto)
+
+        </script>
+    </body>
+</html>
